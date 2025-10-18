@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>D'Kell Engenharia | Construindo o Futuro com Excelência</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "dkell-primary": "#AC9248", // Dourado
+              "dkell-dark": "#1a1a1a", // Preto/Cinza Escuro
+              "dkell-light": "#FFFFFF", // Branco
+              "dkell-secondary": "#F0F0F0", // Cinza claro para fundos
+            },
+            fontFamily: {
+              sans: ["Montserrat", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      #hero-section {
+        background-image: url("assets/images/hero_background.jpg");
+        background-size: cover;
+        background-position: center;
+        position: relative;
+      }
+
+      #hero-overlay {
+        position: absolute;
+        inset: 0;
+        background-color: rgba(
+          26,
+          26,
+          26,
+          0.7
+        ); /* 70% de opacidade do dkell-dark */
+      }
+
+      .header-scrolled {
+        background-color: #1a1a1a;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .whatsapp-float {
+        position: fixed;
+        width: 60px;
+        height: 60px;
+        bottom: 40px;
+        right: 40px;
+        background-color: #25d366;
+        color: #fff;
+        border-radius: 50px;
+        text-align: center;
+        box-shadow: 2px 2px 3px #999;
+        z-index: 100;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.3s ease;
+      }
+      .whatsapp-float:hover {
+        transform: scale(1.1);
+      }
+      .whatsapp-float img {
+        width: 35px; /* Ajuste para o ícone caber bem no círculo */
+        height: 35px;
+      }
+    </style>
+  </head>
+  <body class="bg-dkell-light text-dkell-dark font-sans font-light">
+    <a
+      href="https://wa.me/5511978598045"
+      class="whatsapp-float"
+      target="_blank"
+    >
+      <img src="assets/images/whatsapp.png" alt="Fale Conosco pelo WhatsApp" />
+    </a>
+
+    <header
+      id="main-header"
+      class="fixed top-0 left-0 w-full z-50 transition-all duration-300"
+    >
+      <div
+        class="container mx-auto px-4 sm:px-6 lg:px-8 py-1 flex justify-between items-center"
+      >
+        <a href="#hero-section">
+          <img
+            src="assets/images/logo_dkell.png"
+            alt="Logo D'Kell Engenharia"
+            class="h-28 w-auto transition-opacity duration-300 hover:opacity-80"
+          />
+        </a>
+
+        <nav class="hidden lg:flex space-x-8 items-center">
+          <a
+            href="#sobre-nos"
+            class="text-dkell-light hover:text-dkell-primary transition duration-200 font-medium"
+            >Sobre Nós</a
+          >
+          <a
+            href="#servicos"
+            class="text-dkell-light hover:text-dkell-primary transition duration-200 font-medium"
+            >Serviços</a
+          >
+          <a
+            href="#projetos"
+            class="text-dkell-light hover:text-dkell-primary transition duration-200 font-medium"
+            >Projetos</a
+          >
+          <a
+            href="#contato"
+            class="text-dkell-light hover:text-dkell-primary transition duration-200 font-medium"
+            >Contato</a
+          >
+          <a
+            href="https://wa.me/5511978598045"
+            target="_blank"
+            class="py-2 px-6 bg-dkell-primary text-dkell-dark font-bold rounded-lg shadow-lg hover:opacity-90 transition duration-300 transform hover:scale-105"
+          >
+            Solicite um Orçamento
+          </a>
+        </nav>
+
+        <button
+          id="mobile-menu-button"
+          class="lg:hidden text-dkell-light p-2 rounded-md transition duration-200 focus:outline-none focus:ring-2 focus:ring-dkell-primary"
+        >
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+
+      <nav
+        id="mobile-menu"
+        class="hidden lg:hidden bg-dkell-dark transition-all duration-300"
+      >
+        <div class="flex flex-col space-y-2 p-4">
+          <a
+            href="#sobre-nos"
+            class="text-dkell-light hover:bg-white/10 p-2 rounded-md"
+            >Sobre Nós</a
+          >
+          <a
+            href="#servicos"
+            class="text-dkell-light hover:bg-white/10 p-2 rounded-md"
+            >Serviços</a
+          >
+          <a
+            href="#projetos"
+            class="text-dkell-light hover:bg-white/10 p-2 rounded-md"
+            >Projetos</a
+          >
+          <a
+            href="#contato"
+            class="text-dkell-light hover:bg-white/10 p-2 rounded-md"
+            >Contato</a
+          >
+          <a
+            href="https://wa.me/5511978598045"
+            target="_blank"
+            class="py-2 px-4 bg-dkell-primary text-dkell-dark font-bold rounded-lg text-center mt-2"
+          >
+            Fale Conosco
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <section
+      id="hero-section"
+      class="h-screen flex items-center justify-center text-center relative"
+    >
+      <div id="hero-overlay"></div>
+      <div class="relative z-10 p-4 max-w-4xl mx-auto">
+        <h1
+          class="text-4xl sm:text-7xl font-black uppercase mb-6 leading-tight text-dkell-light"
+        >
+          Construindo o Futuro com
+          <span class="text-dkell-primary">Engenharia de Excelência</span>
+        </h1>
+        <h2 class="text-xl sm:text-2xl font-light text-dkell-light mb-10">
+          Soluções completas em construção, reformas e projetos para transformar
+          suas ideias em realidade.
+        </h2>
+        <a
+          href="https://wa.me/5511978598045"
+          target="_blank"
+          class="inline-block py-4 px-12 text-lg bg-dkell-primary text-dkell-dark font-bold rounded-full shadow-2xl hover:opacity-90 transition duration-300 transform hover:scale-105"
+        >
+          Fale com um Engenheiro
+        </a>
+      </div>
+    </section>
+
+    <section id="sobre-nos" class="py-20 sm:py-28 bg-dkell-light">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+        <h2
+          class="text-4xl font-bold mb-12 text-center text-dkell-dark uppercase"
+        >
+          SOBRE NÓS
+        </h2>
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <p
+              class="text-lg mb-6 leading-relaxed text-dkell-dark/80 font-normal"
+            >
+              Douglas e Kelly, são engenheiros civis que amam transformar ideias
+              em realidade. Acreditamos que cada projeto carrega um propósito
+              maior: proporcionar qualidade, segurança e inovação para quem vai
+              utilizá-lo.
+            </p>
+            <p
+              class="text-lg mb-8 leading-relaxed text-dkell-dark/80 font-normal"
+            >
+              A D'Kell nasceu da união de nossas experiências profissionais e da
+              vontade de criar soluções que unem técnica, estética e
+              sustentabilidade. Trabalhamos lado a lado, somando talentos e
+              visões complementares, para entregar resultados que superam
+              expectativas.
+            </p>
+            <div
+              class="p-6 border-l-4 border-dkell-primary bg-dkell-secondary rounded-r-lg shadow-sm"
+            >
+              <p class="text-xl font-semibold italic text-dkell-dark">
+                "Nosso compromisso é oferecer excelência técnica, transparência
+                e inovação em cada obra."
+              </p>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-4">
+            <img
+              src="assets/images/engenheiro_douglas.png"
+              alt="Engenheiro Douglas"
+              class="rounded-xl shadow-2xl w-full h-full object-cover aspect-square"
+            />
+            <img
+              src="assets/images/engenheira_kelly.png"
+              alt="Engenheira Kelly"
+              class="rounded-xl shadow-2xl w-full h-full object-cover aspect-square mt-8"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="missao-visao-valores"
+      class="py-20 sm:py-28 bg-dkell-dark text-dkell-light"
+    >
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+        <div class="grid md:grid-cols-3 gap-12 text-center">
+          <div>
+            <i
+              data-lucide="rocket"
+              class="w-12 h-12 mx-auto mb-4 text-dkell-primary"
+            ></i>
+            <h3 class="text-2xl font-bold mb-4 uppercase">Missão</h3>
+            <p class="text-dkell-light/70">
+              Oferecer soluções inovadoras e sustentáveis em engenharia, com
+              qualidade, eficiência e segurança, contribuindo para projetos que
+              geram valor para a sociedade.
+            </p>
+          </div>
+          <div>
+            <i
+              data-lucide="eye"
+              class="w-12 h-12 mx-auto mb-4 text-dkell-primary"
+            ></i>
+            <h3 class="text-2xl font-bold mb-4 uppercase">Visão</h3>
+            <p class="text-dkell-light/70">
+              Ser referência em engenharia civil, reconhecida pela qualidade,
+              inovação e compromisso com a sustentabilidade, transformando vidas
+              através de grandes projetos.
+            </p>
+          </div>
+          <div>
+            <i
+              data-lucide="gem"
+              class="w-12 h-12 mx-auto mb-4 text-dkell-primary"
+            ></i>
+            <h3 class="text-2xl font-bold mb-4 uppercase">Valores</h3>
+            <ul class="text-dkell-light/70 space-y-1">
+              <li>Ética e Transparência</li>
+              <li>Qualidade e Excelência</li>
+              <li>Inovação</li>
+              <li>Comprometimento e Segurança</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="servicos" class="py-20 sm:py-28 bg-dkell-secondary">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+        <h2
+          class="text-4xl font-bold mb-4 text-center text-dkell-dark uppercase"
+        >
+          NOSSOS SERVIÇOS
+        </h2>
+        <p class="text-xl text-dkell-dark/70 text-center mb-16 font-light">
+          Da fundação à entrega das chaves, cuidamos de cada detalhe do seu
+          projeto.
+        </p>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div
+            class="bg-white p-8 rounded-xl shadow-lg transition duration-300 transform hover:scale-[1.02] border-t-4 border-dkell-primary"
+          >
+            <i data-lucide="home" class="w-10 h-10 text-dkell-primary mb-4"></i>
+            <h3 class="text-2xl font-bold mb-2 text-dkell-dark">
+              Construção Residencial
+            </h3>
+            <p class="text-dkell-dark/70">
+              Construção de casas e edifícios residenciais com alto padrão de
+              qualidade e acabamento.
+            </p>
+          </div>
+          <div
+            class="bg-white p-8 rounded-xl shadow-lg transition duration-300 transform hover:scale-[1.02] border-t-4 border-dkell-primary"
+          >
+            <i
+              data-lucide="building-2"
+              class="w-10 h-10 text-dkell-primary mb-4"
+            ></i>
+            <h3 class="text-2xl font-bold mb-2 text-dkell-dark">
+              Construção Comercial
+            </h3>
+            <p class="text-dkell-dark/70">
+              Construção de edifícios comerciais e galpões, otimizando espaço e
+              funcionalidade para o seu negócio.
+            </p>
+          </div>
+          <div
+            class="bg-white p-8 rounded-xl shadow-lg transition duration-300 transform hover:scale-[1.02] border-t-4 border-dkell-primary"
+          >
+            <i
+              data-lucide="brush"
+              class="w-10 h-10 text-dkell-primary mb-4"
+            ></i>
+            <h3 class="text-2xl font-bold mb-2 text-dkell-dark">
+              Reformas em Geral
+            </h3>
+            <p class="text-dkell-dark/70">
+              Reformas de casas, estabelecimentos comerciais e retrofit para
+              modernizar e valorizar seu imóvel.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="diferenciais" class="py-20 sm:py-28 bg-dkell-light">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+          <div>
+            <h3 class="text-3xl font-bold mb-4 text-dkell-dark">
+              Parcerias Sólidas e Foco no Cliente
+            </h3>
+            <p class="text-lg text-dkell-dark/70 mb-6">
+              Atendemos desde pessoas físicas a empresas, construtoras,
+              condomínios e órgãos públicos. Nosso compromisso é construir
+              parcerias duradouras, baseadas na excelência técnica,
+              transparência e inovação para garantir o melhor resultado.
+            </p>
+            <h3 class="text-3xl font-bold mb-4 text-dkell-dark">
+              Saúde e Segurança em Primeiro Lugar
+            </h3>
+            <p class="text-lg text-dkell-dark/70">
+              Implementamos planos de gestão de riscos, treinamentos e
+              monitoramento contínuo para garantir ambientes de trabalho seguros
+              e saudáveis, em conformidade com todas as normas regulamentadoras.
+            </p>
+          </div>
+          <div>
+            <img
+              src="assets/images/seguranca_obra.png"
+              alt="Segurança no canteiro de obras"
+              class="rounded-xl shadow-2xl w-full h-full object-cover"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projetos" class="py-20 sm:py-28 bg-dkell-secondary">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <h2
+          class="text-4xl font-bold mb-12 text-center text-dkell-dark uppercase"
+        >
+          PROJETOS REALIZADOS
+        </h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div class="col-span-2 row-span-2">
+            <img
+              src="assets/images/sesc_jundiai1.png"
+              alt="Obra SESC Jundiaí"
+              class="w-full h-full object-cover rounded-lg shadow-md"
+            />
+          </div>
+          <div>
+            <img
+              src="assets/images/retrofit_hsi_1.png"
+              alt="Projeto Retrofit HSI"
+              class="w-full h-full object-cover rounded-lg shadow-md"
+            />
+          </div>
+          <div>
+            <img
+              src="assets/images/retrofit_hsi_4.png"
+              alt="Projeto Retrofit HSI"
+              class="w-full h-full object-cover rounded-lg shadow-md"
+            />
+          </div>
+          <div>
+            <img
+              src="assets/images/projeto_interior_sala.png"
+              alt="Projeto de Interiores"
+              class="w-full h-full object-cover rounded-lg shadow-md"
+            />
+          </div>
+          <div>
+            <img
+              src="assets/images/projeto_interior_cozinha.png"
+              alt="Projeto de Interiores"
+              class="w-full h-full object-cover rounded-lg shadow-md"
+            />
+          </div>
+          <div>
+            <img
+              src="assets/images/execucao_obra_1.png"
+              alt="Execução de Obra"
+              class="w-full h-full object-cover rounded-lg shadow-md"
+            />
+          </div>
+          <div>
+            <img
+              src="assets/images/execucao_obra_3.png"
+              alt="Execução de Obra"
+              class="w-full h-full object-cover rounded-lg shadow-md"
+            />
+          </div>
+          <div>
+            <img
+              src="assets/images/execucao_obra_4.png"
+              alt="Execução de Obra"
+              class="w-full h-full object-cover rounded-lg shadow-md"
+            />
+          </div>
+          <div>
+            <img
+              src="assets/images/execucao_obra_5.png"
+              alt="Execução de Obra"
+              class="w-full h-full object-cover rounded-lg shadow-md"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato" class="py-20 sm:py-28 bg-dkell-light">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+        <h2
+          class="text-4xl font-bold mb-12 text-center text-dkell-dark uppercase"
+        >
+          VAMOS REALIZAR SEU PROJETO?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-12">
+          <div
+            class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-dkell-primary"
+          >
+            <h3 class="text-2xl font-semibold mb-6 text-dkell-dark">
+              Envie sua mensagem
+            </h3>
+            <form onsubmit="handleFormSubmit(event)">
+              <div class="mb-4">
+                <input
+                  type="text"
+                  placeholder="Seu Nome/Empresa"
+                  class="w-full p-3 border border-gray-300 rounded-lg focus:ring-dkell-primary focus:border-dkell-primary transition duration-200"
+                  required
+                />
+              </div>
+              <div class="mb-4">
+                <input
+                  type="email"
+                  placeholder="Seu Melhor E-mail"
+                  class="w-full p-3 border border-gray-300 rounded-lg focus:ring-dkell-primary focus:border-dkell-primary transition duration-200"
+                  required
+                />
+              </div>
+              <div class="mb-4">
+                <input
+                  type="tel"
+                  placeholder="Telefone/WhatsApp (Ex: 11 9xxxx-xxxx)"
+                  class="w-full p-3 border border-gray-300 rounded-lg focus:ring-dkell-primary focus:border-dkell-primary transition duration-200"
+                  required
+                />
+              </div>
+              <div class="mb-6">
+                <textarea
+                  placeholder="Fale sobre seu projeto ou necessidade"
+                  rows="4"
+                  class="w-full p-3 border border-gray-300 rounded-lg focus:ring-dkell-primary focus:border-dkell-primary transition duration-200"
+                  required
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                class="w-full py-3 bg-dkell-primary text-dkell-dark font-bold rounded-lg shadow-md hover:opacity-90 transition duration-300 transform hover:scale-[1.01]"
+              >
+                Solicitar Orçamento via WhatsApp
+              </button>
+            </form>
+          </div>
+          <div class="p-8 bg-dkell-dark rounded-xl shadow-lg text-dkell-light">
+            <h3 class="text-2xl font-semibold mb-6 text-dkell-primary">
+              Nossos Contatos
+            </h3>
+            <div class="space-y-6">
+              <div class="flex items-start space-x-4">
+                <img
+                  src="assets/images/whatsapp.png"
+                  alt="WhatsApp Icon"
+                  class="w-6 h-6 text-dkell-primary flex-shrink-0"
+                />
+                <div>
+                  <p class="font-semibold text-dkell-light">WhatsApp</p>
+                  <a
+                    href="https://wa.me/5511978598045"
+                    target="_blank"
+                    class="block text-white/70 hover:text-dkell-primary transition duration-200"
+                    >Douglas: (11) 97859-8045</a
+                  >
+                  <a
+                    href="https://wa.me/5511961486801"
+                    target="_blank"
+                    class="block text-white/70 hover:text-dkell-primary transition duration-200"
+                    >Kelly: (11) 96148-6801</a
+                  >
+                </div>
+              </div>
+              <div class="flex items-start space-x-4">
+                <i
+                  data-lucide="mail"
+                  class="w-6 h-6 text-dkell-primary flex-shrink-0"
+                ></i>
+                <div>
+                  <p class="font-semibold text-dkell-light">E-mail</p>
+                  <p class="text-white/70">
+                    douglas.julio@dkellengenharia.com.br
+                  </p>
+                  <p class="text-white/70">
+                    kelly.canedo@dkellengenharia.com.br
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start space-x-4">
+                <i
+                  data-lucide="instagram"
+                  class="w-6 h-6 text-dkell-primary flex-shrink-0"
+                ></i>
+                <div>
+                  <p class="font-semibold text-dkell-light">Instagram</p>
+                  <a
+                    href="https://www.instagram.com/dkellengenharia"
+                    target="_blank"
+                    class="text-white/70 hover:text-dkell-primary transition duration-200"
+                    >@dkellengenharia</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-dkell-dark py-8">
+      <div
+        class="container mx-auto px-4 sm:px-6 lg:px-8 text-center text-dkell-light text-sm"
+      >
+        <div class="mb-4">
+          <img
+            src="assets/images/logo_dkell.png"
+            alt="Logo D'Kell Engenharia"
+            class="h-32 mx-auto"
+          />
+        </div>
+        <p class="mb-1">
+          &copy; <span id="current-year"></span> D'Kell Engenharia. Todos os
+          direitos reservados.
+        </p>
+        <p class="text-xs text-dkell-light/70">
+          Criado por
+          <span class="font-semibold text-dkell-primary">LucasSilva.Dev</span>
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        lucide.createIcons();
+        document.getElementById("current-year").textContent =
+          new Date().getFullYear();
+      });
+
+      window.onscroll = function () {
+        const header = document.getElementById("main-header");
+        if (window.scrollY > 50) {
+          header.classList.add("header-scrolled");
+        } else {
+          header.classList.remove("header-scrolled");
+        }
+      };
+
+      const mobileMenuButton = document.getElementById("mobile-menu-button");
+      const mobileMenu = document.getElementById("mobile-menu");
+      mobileMenuButton.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+      document.querySelectorAll("#mobile-menu a").forEach((link) => {
+        if (!link.href.includes("wa.me")) {
+          link.addEventListener("click", () => {
+            mobileMenu.classList.add("hidden");
+          });
+        }
+      });
+
+      function handleFormSubmit(event) {
+        event.preventDefault();
+        const form = event.target;
+        const nome = form.elements[0].value;
+        const email = form.elements[1].value;
+        const telefone = form.elements[2].value;
+        const mensagem = form.elements[3].value;
+
+        const textoPadrao =
+          "Olá, gostaria de um orçamento da D'Kell Engenharia. Seguem meus dados:\n\n";
+        const mensagemFormatada = `${textoPadrao}*Nome/Empresa:* ${nome}\n*E-mail:* ${email}\n*Telefone:* ${telefone}\n\n*Projeto:* ${mensagem}`;
+        const mensagemCodificada = encodeURIComponent(mensagemFormatada);
+
+        const numeroWhatsApp = "5511978598045"; // WhatsApp principal (Douglas)
+        const whatsappUrl = `https://wa.me/${numeroWhatsApp}?text=${mensagemCodificada}`;
+
+        window.open(whatsappUrl, "_blank");
+        form.reset();
+      }
+    </script>
+  </body>
+</html>
